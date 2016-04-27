@@ -24,3 +24,5 @@ standard-minifier-css
 standard-minifier-js
 manuel:viewmodel
 twbs:bootstrap
+zurb:foundation-sites
+dougthwaites:jquery-match-height

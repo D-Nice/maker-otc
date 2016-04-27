@@ -1,20 +1,33 @@
 <body>
-  <div class="container">
+
+  <div class="container main">
+
+    <div class="row mtl  align-center">
+      <div class="small-12 columns text-center">
     <h1>
-      <img alt=Maker src=https://makerdao.com/splash/images/logo.svg>
-      <span>#otc</span>
+      <img alt=Maker class="pbl" src="/images/mkr-logo-transp.svg">
     </h1>
-
+  </div>
+          <div class="small-12 columns panel  text-center alert ">
+          <span class="label  alert">Warning!</span>
+          <p>
+            MakerOTC is undergoing alpha testing: Proceed at your own risk, and use only small amounts of ETH and MKR.
+          </p>
+      </div>
+    </div>
+      <div class="row align-spaced">
+        <div data-mH="1" class="small-12 medium-8 columns panel callout">
     <p>
-      This is a simple on-chain OTC market for {{baseCurrency}}. Either pick an order below (in which case delivery will happen instantly), or <a href="#neworder">submit a new order</a>.
-    </p>
+      <h3>This is a simple on-chain OTC market for <span class="text-primary ">{{baseCurrency}}</span> </h3> </p> <p>
+        Either pick an order below (in which case delivery will happen instantly),<br> or <a href="#neworder">submit a new order</a>.
+      </p>
 
-    <p class="text-danger">
-      <strong>Warning!</strong> MakerOTC is undergoing alpha testing: Proceed at your own risk, and use only small amounts of ETH and MKR.
-    </p>
+  </div>
 
-    <p>
-      Network: {{network}}
+
+
+   <div data-mH="1"  class="small-12  medium-4 columns panel  callout">
+      <label>Network {{> whatisthis section="network"}} : <strong class="label round secondary">{{network}}</strong></label>
       {{#unless isConnected}}
         (not connected)
       {{else}}
@@ -34,21 +47,27 @@
           {{/if}}
         {{/if}}
       {{/unless}}
-      {{> whatisthis section="network"}}
-    </p>
+
+  </div>
+</div>
+
 
     {{#if ready}}
+      <div class="row align-spaced">
       {{#unless equals network 'private'}}
-        <p>
-          Contract: <a href={{contractHref}}>{{contractAddress}}</a>
-          {{> whatisthis section="contract"}}
-        </p>
+      <div data-mH="1" class="small-12 medium-6 medium-push-6  panel callout columns ">
+          <label>Contract:   {{> whatisthis section="contract"}}</label>
+          <a href={{contractHref}}>{{contractAddress}}</a>
+
+      </div>
       {{/unless}}
+
+      <div data-mH="1" class="small-12 medium-6 medium-pull-6 panel callout columns">
       {{> accountSelector }}
-      <p>
+          </div>  </div>
         Balance: {{formatBalance ETHBalance}} ETH
         {{> whatisthis section="balance"}}
-      </p>
+
       <p>Tokens:
         {{#each token in allTokens}}
           {{formatBalance token.balance}}
@@ -65,6 +84,7 @@
         <a href="#allowance">Allowance</a>: {{#each token in allTokens}}{{formatBalance token.allowance}} {{token._id}} | {{/each}}
         {{> whatisthis section="allowance"}}
       </p>
+
 
       {{#if contractExists}}
         <div class=row>

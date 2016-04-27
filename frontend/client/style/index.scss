@@ -1,3 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,700);
+
+@import '{zurb:foundation-sites}/scss/foundation';
+@include foundation-everything;
+@import "variables";
+@import "padding-margin";
+@import "custom";
+
+
+
+body {
+  font-family: Roboto;
+  word-wrap:break-word;
+}
+
+/*
 * { font: inherit; margin: 0; padding: 0 }
 * { outline: none }
 * { box-sizing: border-box }
@@ -98,3 +114,4 @@ h1 img { margin-left: -1.2rem }
 section { float: right; width: 48% }
 section:first-of-type { float: left }
 }
+*/

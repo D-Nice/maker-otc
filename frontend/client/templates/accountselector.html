@@ -1,10 +1,9 @@
 <template name="accountSelector">
-  <p>Account:
+  <label>Account: {{> whatisthis section="account"}}</label>
     <select>
     {{#each accounts}}
       <option value="{{this}}" selected={{equals this address}}>{{this}}</option>
     {{/each}}
     </select>
-    {{> whatisthis section="account"}}
-  </p>
+
 </template>
