@@ -25,3 +25,6 @@ standard-minifier-js
 manuel:viewmodel
 twbs:bootstrap
 fourseven:scss
+wolves:bourbon
+wolves:neat
+wolves:bitters
