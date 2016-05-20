@@ -1,0 +1,61 @@
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+body, html {
+  background-color: #EFF1F3;
+  font-weight: 300;
+  @include font-size(16px);
+	line-height: 2rem;
+  .main {
+    margin: 4rem auto;
+    background-color: #fff;
+		-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+    padding: 4rem;
+    border-radius: 0.4rem;
+
+
+  }
+  p {
+    font-weight: 300;
+  }
+  a {
+    color: $primary-color;
+    font-weight: 400;
+    &:hover {
+      color: darken($primary-color, 10%);
+        transition: color 0.5s ease;
+
+    }
+  }
+}
+
+.text-primary {
+  color: $success-color;
+}
+
+
+.label {
+  background: darken($success-color, 2%);
+  border-radius: 0.15rem;
+  padding: 0.4rem 0.8rem;
+  transition: color 0.5s ease;
+
+}
